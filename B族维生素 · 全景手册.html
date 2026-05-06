@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B族维生素 · 全景手册</title>
+<link href="./B族维生素 · 全景手册_files/css2" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF7;--text:#1A1A1A;--muted:#6B6B6B;--border:#E0DDD5;
+  --b1:#C8A96E;--b2:#D4A83C;--b3:#B87333;--b5:#7A9E7E;
+  --b6:#E07A5F;--b7:#D4943A;--b9:#3A7D44;--b12:#8B2635;--ch:#C8962E;
+  --serif:'Noto Serif SC',Georgia,serif;
+  --sans:'Noto Sans SC','PingFang SC',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
+
+/* ══ ANIMATIONS ══════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes typewriter{from{width:0}to{width:100%}}
+@keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+
+.reveal{opacity:0;transform:translateY(35px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all .7s .1s cubic-bezier(.25,.46,.45,.94)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all .7s .1s cubic-bezier(.25,.46,.45,.94)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.88);transition:all .6s cubic-bezier(.25,.46,.45,.94)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+.stagger-1{transition-delay:.05s}.stagger-2{transition-delay:.15s}.stagger-3{transition-delay:.25s}
+.stagger-4{transition-delay:.35s}.stagger-5{transition-delay:.45s}
+
+/* ══ HERO ════════════════════════════════════════ */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  color:#fff;text-align:center;padding:3rem 2rem;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(165deg,rgba(20,25,40,.92),rgba(30,40,55,.88),rgba(40,55,70,.85));
+}
+.hero::after{
+  content:'B';position:absolute;font-family:var(--serif);font-size:clamp(300px,50vw,650px);
+  font-weight:900;opacity:0.035;color:#fff;right:-8%;top:50%;transform:translateY(-50%);
+  line-height:1;pointer-events:none;animation:float 6s ease-in-out infinite;
+}
+.hero>*{position:relative;z-index:1}
+.hero-label{
+  font-size:.7rem;letter-spacing:.6em;text-transform:uppercase;color:rgba(255,255,255,.45);
+  margin-bottom:2rem;animation:fadeUp 1s .3s both;
+}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:900;line-height:1.12;
+  margin-bottom:1.5rem;animation:fadeUp 1s .5s both;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--b1),var(--b6),var(--b9));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-size:200% 200%;animation:gradientShift 4s ease infinite;
+}
+.hero .subtitle{
+  font-size:1.1rem;color:rgba(255,255,255,.65);max-width:640px;line-height:1.9;
+  font-weight:300;animation:fadeUp 1s .7s both;
+}
+.hero .hero-imgs{
+  display:flex;gap:1rem;margin-top:3rem;animation:fadeUp 1s .9s both;
+}
+.hero .hero-imgs img{
+  width:70px;height:70px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(255,255,255,.3);transition:all .4s;
+  animation:float 3s ease-in-out infinite;
+}
+.hero .hero-imgs img:nth-child(2){animation-delay:.5s}
+.hero .hero-imgs img:nth-child(3){animation-delay:1s}
+.hero .hero-imgs img:nth-child(4){animation-delay:1.5s}
+.hero .hero-imgs img:nth-child(5){animation-delay:2s}
+.hero .hero-imgs img:hover{transform:scale(1.2) translateY(-5px);border-color:#fff}
+.hero .scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  font-size:.7rem;letter-spacing:.3em;color:rgba(255,255,255,.3);animation:pulse 2s ease-in-out infinite;
+}
+
+/* ══ TOC ═════════════════════════════════════════ */
+.toc{
+  padding:5rem 2rem;max-width:1100px;margin:0 auto;
+  background:url('https://images.pexels.com/photos/5946081/pexels-photo-5946081.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover fixed;
+  background:var(--bg);position:relative;
+}
+.toc h2{font-family:var(--serif);font-size:1.6rem;margin-bottom:2.5rem;position:relative;padding-bottom:.8rem}
+.toc h2::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:3px;background:var(--b1)}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem}
+.toc-item{
+  display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;
+  border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text);
+  transition:all .35s ease;background:#fff;position:relative;overflow:hidden;
+}
+.toc-item::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  transform:scaleY(0);transition:transform .3s;border-radius:0 4px 4px 0;
+}
+.toc-item:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.toc-item:hover::before{transform:scaleY(1)}
+.toc-item .toc-img{width:50px;height:50px;border-radius:10px;object-fit:cover;flex-shrink:0}
+.toc-num{font-family:var(--serif);font-size:1.6rem;font-weight:900;min-width:2.5rem;text-align:center;line-height:1}
+.toc-info h3{font-size:.9rem;font-weight:600;margin-bottom:.1rem}
+.toc-info p{font-size:.7rem;color:var(--muted)}
+
+/* ══ SECTION ═════════════════════════════════════ */
+.vitamin-section{position:relative}
+.section-hero{
+  min-height:65vh;display:flex;align-items:center;padding:4rem 2rem;
+  position:relative;overflow:hidden;
+}
+.section-hero .bg-img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.section-hero .bg-overlay{position:absolute;inset:0;z-index:1}
+.section-hero .content{position:relative;z-index:2;color:#fff;max-width:1100px;margin:0 auto;width:100%}
+.section-hero .badge{
+  display:inline-block;font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;
+  padding:.4rem 1.2rem;border:1px solid rgba(255,255,255,.35);border-radius:30px;
+  margin-bottom:1.5rem;color:rgba(255,255,255,.75);backdrop-filter:blur(4px);
+}
+.section-hero h2{font-family:var(--serif);font-size:clamp(3.5rem,9vw,6rem);font-weight:900;line-height:1;margin-bottom:.4rem;text-shadow:0 4px 30px rgba(0,0,0,.3)}
+.section-hero .cn-name{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;opacity:.85}
+.section-hero .quote{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  max-width:480px;opacity:.7;line-height:1.7;margin-top:1.8rem;
+  border-left:2px solid rgba(255,255,255,.25);padding-left:1.2rem;
+}
+.section-hero .hero-food-strip{
+  display:flex;gap:.8rem;margin-top:2rem;
+}
+.section-hero .hero-food-strip img{
+  width:56px;height:56px;border-radius:12px;object-fit:cover;
+  border:2px solid rgba(255,255,255,.25);transition:all .3s;
+}
+.section-hero .hero-food-strip img:hover{transform:scale(1.15);border-color:#fff}
+
+.section-body{max-width:1100px;margin:0 auto;padding:4rem 2rem}
+
+/* ── Info cards ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+.info-card{
+  background:#fff;border-radius:16px;padding:2rem 2.2rem;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+  transition:all .35s ease;
+}
+.info-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.06);transform:translateY(-3px)}
+.info-card .card-tag{font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;font-weight:700;margin-bottom:.8rem}
+.info-card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:.7rem;font-weight:700}
+.info-card p{color:#444;font-size:.88rem;line-height:1.85}
+.info-card.full{grid-column:1/-1}
+.info-card .card-img{width:100%;border-radius:10px;margin-top:1rem;max-height:200px;object-fit:cover}
+
+/* ── Data strip ── */
+.data-strip{
+  display:flex;flex-wrap:wrap;gap:1.5rem;margin:2rem 0;
+  padding:2rem 2.5rem;background:#fff;border-radius:16px;border:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.data-strip::before{
+  content:'';position:absolute;top:0;right:0;width:200px;height:100%;
+  opacity:.06;background-size:cover;background-position:center;border-radius:0 16px 16px 0;
+}
+.data-item{flex:1;min-width:130px}
+.data-item .label{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:600}
+.data-item .value{font-family:var(--serif);font-size:1.4rem;font-weight:700}
+.data-item .note{font-size:.75rem;color:var(--muted);margin-top:.15rem}
+
+/* ── Food gallery ── */
+.food-section-title{font-family:var(--serif);margin-bottom:1.2rem;font-size:1.1rem}
+.food-gallery{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0 2.5rem}
+.food-card{
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  width:110px;text-decoration:none;color:var(--text);transition:all .35s;
+}
+.food-card:hover{transform:translateY(-6px)}
+.food-card img{
+  width:90px;height:90px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--border);transition:all .35s;box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+.food-card:hover img{border-color:currentColor;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.food-card span{font-size:.78rem;font-weight:500;text-align:center}
+
+/* ── Case box ── */
+.case-box{
+  margin:2.5rem 0;padding:2rem 2.5rem;border-radius:16px;
+  border-left:4px solid;position:relative;overflow:hidden;
+  background:#fff;border:1px solid var(--border);border-left:4px solid;
+}
+.case-box .case-img{
+  float:right;width:180px;height:120px;border-radius:12px;object-fit:cover;
+  margin:0 0 1rem 1.5rem;box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+.case-box .case-year{font-family:var(--serif);font-size:2.2rem;font-weight:900;opacity:.1;position:absolute;right:1.5rem;bottom:.5rem}
+.case-box h4{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem;font-weight:700}
+.case-box p{font-size:.85rem;color:#444;line-height:1.85}
+
+/* ── Tip box ── */
+.tip-box{
+  margin:2rem 0;padding:1.5rem 2rem;border-radius:14px;
+  background:linear-gradient(135deg,#fff8ef,#fff3e0);border:1px solid #f0dfc0;
+  transition:transform .3s;
+}
+.tip-box:hover{transform:scale(1.01)}
+.tip-box h4{font-size:.88rem;font-weight:700;margin-bottom:.4rem}
+.tip-box p{font-size:.82rem;color:#555;line-height:1.8}
+
+/* ── Image banner between sections ── */
+.section-banner{
+  width:100%;height:280px;background-size:cover;background-position:center;
+  background-attachment:fixed;position:relative;
+}
+.section-banner::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(250,250,247,.8),rgba(250,250,247,0) 30%,rgba(250,250,247,0) 70%,rgba(250,250,247,.8));
+}
+
+/* ══ SUMMARY TABLE ═══════════════════════════════ */
+.summary-section{
+  padding:5rem 2rem;color:#fff;position:relative;overflow:hidden;
+  background:url('https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover fixed;
+}
+.summary-section::before{content:'';position:absolute;inset:0;background:rgba(20,25,40,.92)}
+.summary-section>*{position:relative;z-index:1}
+.summary-section h2{font-family:var(--serif);font-size:2rem;text-align:center;margin-bottom:.4rem}
+.summary-section .sub{text-align:center;color:rgba(255,255,255,.45);font-size:.8rem;margin-bottom:3rem}
+.summary-table{max-width:1100px;margin:0 auto;overflow-x:auto}
+.summary-table table{width:100%;border-collapse:collapse;font-size:.8rem}
+.summary-table th{text-align:left;padding:1rem 1.1rem;border-bottom:2px solid rgba(255,255,255,.12);font-weight:600;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.summary-table td{padding:.85rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.8)}
+.summary-table tr{transition:background .3s}
+.summary-table tr:hover td{background:rgba(255,255,255,.04)}
+.summary-table .vname{font-weight:700;color:#fff;display:flex;align-items:center;gap:.6rem}
+.summary-table .vname img{width:28px;height:28px;border-radius:6px;object-fit:cover}
+
+/* ══ MEAL GUIDE ══════════════════════════════════ */
+.meal-section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.meal-section h2{font-family:var(--serif);font-size:2rem;margin-bottom:.4rem}
+.meal-section .sub{color:var(--muted);margin-bottom:3rem;font-size:.88rem}
+.meal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:768px){.meal-grid{grid-template-columns:1fr}}
+.meal-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:all .35s}
+.meal-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.meal-card .meal-img{height:220px;background-size:cover;background-position:center;position:relative}
+.meal-card .meal-img::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.4))}
+.meal-card .meal-time{
+  position:absolute;top:1rem;left:1rem;background:rgba(255,255,255,.9);
+  color:var(--text);padding:.35rem 1rem;border-radius:20px;font-size:.72rem;
+  font-weight:600;z-index:1;backdrop-filter:blur(4px);
+}
+.meal-card .meal-body{padding:1.5rem}
+.meal-card h3{font-family:var(--serif);font-size:1.1rem;margin-bottom:.5rem}
+.meal-card p{font-size:.8rem;color:#555;line-height:1.8;margin-bottom:.8rem}
+.meal-card .vtags{font-size:.7rem;color:var(--muted);letter-spacing:.05em}
+.meal-card .meal-foods{display:flex;gap:.5rem;margin:.8rem 0;flex-wrap:wrap}
+.meal-card .meal-foods img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #eee}
+
+/* ══ FACTS ═══════════════════════════════════════ */
+.facts-section{
+  padding:5rem 2rem;position:relative;overflow:hidden;
+  background:url('https://images.pexels.com/photos/1337585/pexels-photo-1337585.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover fixed;
+}
+.facts-section::before{content:'';position:absolute;inset:0;background:rgba(245,243,238,.93)}
+.facts-section>*{position:relative;z-index:1}
+.facts-section h2{font-family:var(--serif);font-size:2rem;text-align:center;margin-bottom:3rem}
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.fact-card{
+  background:#fff;border-radius:16px;padding:2rem;border:1px solid var(--border);
+  transition:all .35s;position:relative;overflow:hidden;
+}
+.fact-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.fact-card .fact-img{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:1rem}
+.fact-num{font-family:var(--serif);font-size:2.2rem;font-weight:900;opacity:.1;margin-bottom:.3rem}
+.fact-card h4{font-size:.92rem;font-weight:700;margin-bottom:.5rem}
+.fact-card p{font-size:.8rem;color:#555;line-height:1.8}
+
+/* ══ FOOTER ══════════════════════════════════════ */
+.footer{
+  text-align:center;padding:4rem 2rem;
+  background:url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  position:relative;color:rgba(255,255,255,.4);font-size:.75rem;line-height:2;
+}
+.footer::before{content:'';position:absolute;inset:0;background:rgba(20,25,40,.92)}
+.footer>*{position:relative;z-index:1}
+.footer .f-title{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+
+/* ══ RESPONSIVE ══════════════════════════════════ */
+@media(max-width:600px){
+  .hero h1{font-size:2.2rem}
+  .section-hero h2{font-size:3.5rem}
+  .info-grid{gap:1rem}
+  .food-gallery{gap:.7rem}
+  .food-card{width:85px}
+  .food-card img{width:68px;height:68px}
+  .meal-grid{grid-template-columns:1fr}
+  .case-box .case-img{width:100%;float:none;margin:0 0 1rem 0;height:160px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════════════ HERO ═════════════════ -->
+<section class="hero">
+  <div class="hero-label">THE VITAMIN B COMPLEX · 全 景 手 册 · 2026</div>
+  <h1><span>B</span>族维生素<br>完全指南</h1>
+  <p class="subtitle">从糙米里的硫胺素，到蛋黄里的胆碱——九种水溶性维生素如何在每一次代谢中默默工作，又如何在你不经意间从餐桌上流失。</p>
+  <div class="hero-imgs">
+    <img src="./B族维生素 · 全景手册_files/pexels-photo-4110257.jpeg" alt="糙米">
+    <img src="./B族维生素 · 全景手册_files/pexels-photo-248412.jpeg" alt="牛奶鸡蛋">
+    <img src="./B族维生素 · 全景手册_files/pexels-photo-3296279.jpeg" alt="三文鱼">
+    <img src="./B族维生素 · 全景手册_files/pexels-photo-2325843.jpeg" alt="菠菜">
+    <img src="./B族维生素 · 全景手册_files/pexels-photo-6941026.jpeg" alt="鸡蛋">
+  </div>
+  <div class="scroll-hint">▼ &nbsp; 向 下 滚 动</div>
+</section>
+
+<!-- ═════════════════ TOC ═════════════════ -->
+<section class="toc">
+  <h2 class="reveal visible">目 录</h2>
+  <div class="toc-grid">
+    <a class="toc-item reveal stagger-1 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b1" style="--c:var(--b1)"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-4110257(1).jpeg" alt=""><div class="toc-info"><h3>B1 硫胺素</h3><p>糖代谢的核心辅酶</p></div></a>
+    <a class="toc-item reveal stagger-2 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b2"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-248412(1).jpeg" alt=""><div class="toc-info"><h3>B2 核黄素</h3><p>线粒体能量引擎</p></div></a>
+    <a class="toc-item reveal stagger-3 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b3"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-547263.jpeg" alt=""><div class="toc-info"><h3>B3 烟酸</h3><p>400+酶反应前体</p></div></a>
+    <a class="toc-item reveal stagger-4 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b5"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-1640774.jpeg" alt=""><div class="toc-info"><h3>B5 泛酸</h3><p>辅酶A核心组件</p></div></a>
+    <a class="toc-item reveal stagger-5 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b6"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-3296279(1).jpeg" alt=""><div class="toc-info"><h3>B6 吡哆醇</h3><p>氨基酸代谢枢纽</p></div></a>
+    <a class="toc-item reveal stagger-1 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b7"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-6941010.jpeg" alt=""><div class="toc-info"><h3>B7 生物素</h3><p>羧化酶辅因子</p></div></a>
+    <a class="toc-item reveal stagger-2 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b9"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-2325843(1).jpeg" alt=""><div class="toc-info"><h3>B9 叶酸</h3><p>DNA合成与胎儿发育</p></div></a>
+    <a class="toc-item reveal stagger-3 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#b12"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-3535383.jpeg" alt=""><div class="toc-info"><h3>B12 钴胺素</h3><p>唯一含金属的维生素</p></div></a>
+    <a class="toc-item reveal stagger-4 visible" href="file:///C:/Users/86147/Downloads/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0_%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8Cv2.html#choline"><img class="toc-img" src="./B族维生素 · 全景手册_files/pexels-photo-6941026(1).jpeg" alt=""><div class="toc-info"><h3>胆碱</h3><p>细胞膜与神经递质基石</p></div></a>
+  </div>
+</section>
+
+<!-- ═════════════════ B1 硫胺素 ═════════════════ -->
+<section class="vitamin-section" id="b1">
+  <div class="section-hero">
+    <div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/4110257/pexels-photo-4110257.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div>
+    <div class="bg-overlay" style="background:linear-gradient(135deg,rgba(160,130,70,.85),rgba(100,75,30,.9))"></div>
+    <div class="content">
+      <div class="badge">01 · Thiamine</div>
+      <h2>B1</h2>
+      <div class="cn-name">硫胺素</div>
+      <div class="quote">"去掉米的胚芽，等于丢掉了它的灵魂。"</div>
+      <div class="hero-food-strip">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-4110257(2).jpeg" alt="糙米">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-2280545.jpeg" alt="全麦">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-65175.jpeg" alt="猪肉">
+      </div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible">
+        <div class="card-tag" style="color:var(--b1)">生理功能</div>
+        <h3>糖代谢的"点火器"</h3>
+        <p>硫胺素以焦磷酸硫胺素（TPP）形式参与糖代谢中至关重要的丙酮酸脱羧反应，将葡萄糖转化为可被细胞利用的能量。大脑消耗人体约20%的葡萄糖，而这一切都依赖B1的催化。B1还参与支链氨基酸代谢和戊糖磷酸途径，对核酸合成和NADPH再生不可或缺。</p>
+        <img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-1393382.jpeg" alt="大脑与能量">
+      </div>
+      <div class="info-card reveal-right visible">
+        <div class="card-tag" style="color:#c0392b">缺乏后果</div>
+        <h3>脚气病：曾经的亚洲杀手</h3>
+        <p><strong>干性脚气病：</strong>周围神经病变，手脚麻木、肌肉萎缩、步态不稳。<br><strong>湿性脚气病：</strong>心血管系统受损，心力衰竭与全身水肿。<br><strong>韦尼克脑病：</strong>长期酗酒者最常见的B1缺乏并发症，眼球震颤、共济失调、意识模糊，可致永久性脑损伤。</p>
+      </div>
+      <div class="info-card reveal-left visible">
+        <div class="card-tag" style="color:var(--muted)">过量风险</div>
+        <h3>安全性极高</h3>
+        <p>水溶性维生素，多余量经肾脏快速排出。未设定UL，口服补充几乎无毒性记录。静脉注射高剂量偶见过敏反应，但极为罕见。</p>
+      </div>
+      <div class="info-card reveal-right visible">
+        <div class="card-tag" style="color:var(--b1)">与生活的关联</div>
+        <h3>精白米时代的隐形危机</h3>
+        <p>精白米、白面包几乎去除全部胚芽——B1的70%~80%存在于胚芽中。频繁外卖、精加工食品占比高的年轻人，B1摄入不足风险远高于想象。亚洲饮食模式碳水比高，对B1需求量也更高。</p>
+      </div>
+    </div>
+    <div class="data-strip reveal visible" style="--c:var(--b1)">
+      <div class="data-item"><div class="label">成人男性</div><div class="value" style="color:var(--b1)">1.4 mg</div></div>
+      <div class="data-item"><div class="label">成人女性</div><div class="value" style="color:var(--b1)">1.2 mg</div></div>
+      <div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b1)">1.4 mg</div></div>
+      <div class="data-item"><div class="label">UL</div><div class="value">—</div><div class="note">未设定</div></div>
+    </div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b1)"><img src="./B族维生素 · 全景手册_files/pexels-photo-4110257.jpeg" alt="糙米"><span>糙米</span></div>
+      <div class="food-card" style="color:var(--b1)"><img src="./B族维生素 · 全景手册_files/pexels-photo-2280545(1).jpeg" alt="全麦面包"><span>全麦面包</span></div>
+      <div class="food-card" style="color:var(--b1)"><img src="./B族维生素 · 全景手册_files/pexels-photo-65175(1).jpeg" alt="猪瘦肉"><span>猪瘦肉</span></div>
+      <div class="food-card" style="color:var(--b1)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169.jpeg" alt="豆类"><span>豆类</span></div>
+      <div class="food-card" style="color:var(--b1)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1327838.jpeg" alt="葵花籽"><span>葵花籽</span></div>
+    </div>
+    <div class="case-box reveal visible" style="border-left-color:var(--b1)">
+      <img class="case-img" src="./B族维生素 · 全景手册_files/pexels-photo-2187605.jpeg" alt="日本海军">
+      <div class="case-year">1882</div>
+      <h4>📖 日本海军脚气病事件</h4>
+      <p>1882年，日本海军军医高木兼宽发现以精白米为主食的水兵脚气病发病率高达30%。他将舰队饮食改为大麦混合粮食，发病率骤降至零——比维生素B1正式发现（1911年）早了整整30年，是营养学史上最早的干预实验之一。</p>
+    </div>
+    <div class="tip-box reveal visible">
+      <h4>⚠️ 易忽略的点</h4>
+      <p><strong>淘米三遍以上</strong>会使B1损失30%~60%；<strong>煮粥加碱</strong>在碱性环境中直接破坏B1结构；烹饪温度越高、时间越长，B1损失越大。建议蒸煮代替长时间炖煮，适量减少淘米次数。</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -63.6375px;"></div>
+
+<!-- ═════════════════ B2 核黄素 ═════════════════ -->
+<section class="vitamin-section" id="b2">
+  <div class="section-hero">
+    <div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div>
+    <div class="bg-overlay" style="background:linear-gradient(135deg,rgba(170,130,40,.85),rgba(120,90,20,.9))"></div>
+    <div class="content">
+      <div class="badge">02 · Riboflavin</div><h2>B2</h2><div class="cn-name">核黄素</div>
+      <div class="quote">"口角炎反复，可能不是上火。"</div>
+      <div class="hero-food-strip">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-248412(2).jpeg" alt="牛奶">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-6941026(2).jpeg" alt="鸡蛋">
+        <img src="./B族维生素 · 全景手册_files/pexels-photo-1295572.jpeg" alt="杏仁">
+      </div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b2)">生理功能</div><h3>线粒体的"电子快递员"</h3><p>核黄素是FMN与FAD的前体，驱动线粒体电子传递链，参与谷胱甘肽还原酶运作，帮助细胞对抗氧化应激。B2还协助B6和叶酸的活化——一旦B2不足，其他B族功能受到连锁影响。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>"烂嘴角"背后的真相</h3><p><strong>口角炎：</strong>嘴角裂口糜烂反复发作。<strong>唇干裂、舌炎：</strong>舌面红肿（"品红舌"）。<strong>畏光与脂溢性皮炎。</strong>中国居民膳食调查显示B2摄入普遍仅达推荐量60%，是我国最缺乏的维生素之一。</p></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--muted)">过量</div><h3>几乎无毒性</h3><p>过量部分通过尿液排出（尿液呈亮黄色是正常现象）。未设定UL。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--b2)">与生活的关联</div><h3>中国人最缺的维生素</h3><p>B2最富集的食物是动物肝脏和牛奶，在传统中式饮食中占比偏低。素食者、不喝奶人群缺乏风险尤高。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-1435706.jpeg" alt="传统中式饮食"></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">男性</div><div class="value" style="color:var(--b2)">1.4 mg</div></div><div class="data-item"><div class="label">女性</div><div class="value" style="color:var(--b2)">1.2 mg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b2)">1.4 mg</div></div><div class="data-item"><div class="label">UL</div><div class="value">—</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b2)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3338681.jpeg" alt="肝脏"><span>动物肝脏</span></div>
+      <div class="food-card" style="color:var(--b2)"><img src="./B族维生素 · 全景手册_files/pexels-photo-248412.jpeg" alt="牛奶"><span>牛奶</span></div>
+      <div class="food-card" style="color:var(--b2)"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026.jpeg" alt="鸡蛋"><span>鸡蛋</span></div>
+      <div class="food-card" style="color:var(--b2)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1295572(1).jpeg" alt="杏仁"><span>杏仁</span></div>
+      <div class="food-card" style="color:var(--b2)"><img src="./B族维生素 · 全景手册_files/pexels-photo-2325843.jpeg" alt="菠菜"><span>菠菜</span></div>
+    </div>
+    <div class="case-box reveal visible" style="border-left-color:var(--b2)"><img class="case-img" src="./B族维生素 · 全景手册_files/pexels-photo-1435904.jpeg" alt="乳品"><h4>📖 光照分解——乳品避光包装的科学</h4><p>B2极易被紫外光和可见光分解。透明玻璃瓶装牛奶在日光下暴晒2小时，B2损失可达50%以上。现代乳品包装多采用纸盒或不透明瓶——不是营销噱头，而是营养保护。</p></div>
+    <div class="tip-box reveal visible"><h4>⚠️ 易忽略的点</h4><p>服用复合维生素后"尿液变黄"是B2排出体外的表现——完全正常，不必紧张。</p></div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: 77.3839px;"></div>
+
+<!-- ═════════════════ B3 烟酸 ═════════════════ -->
+<section class="vitamin-section" id="b3">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(140,90,30,.88),rgba(90,55,15,.92))"></div>
+    <div class="content"><div class="badge">03 · Niacin</div><h2>B3</h2><div class="cn-name">烟酸</div><div class="quote">"墨西哥玉米饼里的一道古老智慧。"</div>
+      <div class="hero-food-strip"><img src="./B族维生素 · 全景手册_files/pexels-photo-547263(1).jpeg" alt="玉米"><img src="./B族维生素 · 全景手册_files/pexels-photo-616354.jpeg" alt="鸡胸肉"><img src="./B族维生素 · 全景手册_files/pexels-photo-1295572.jpeg" alt="坚果"></div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b3)">生理功能</div><h3>400+酶反应的能量货币</h3><p>烟酸是NAD⁺与NADP⁺前体，参与超过400种酶促反应——从糖酵解、脂肪酸氧化到电子传递链。NAD⁺还在DNA修复和细胞信号传导中扮演关键角色，近年成为抗衰老研究热点靶标。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>糙皮病——"4D"死亡螺旋</h3><p>严重缺乏导致糙皮病：<strong>Dermatitis</strong>（皮炎）、<strong>Diarrhea</strong>（腹泻）、<strong>Dementia</strong>（痴呆）和<strong>Death</strong>（死亡）。20世纪初美国南方曾因单一玉米饮食大规模流行。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-547263(2).jpeg" alt="玉米田"></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:#e74c3c">过量风险 ⚠</div><h3>药理剂量需谨慎</h3><p>临床降血脂剂量（1000~3000mg/d）可引发面部潮红、皮肤瘙痒、肝损。UL为35mg/d（烟酸形式）。能量饮料中常含高剂量烟酰胺，长期饮用需关注。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--b3)">与生活的关联</div><h3>色氨酸可以"兼职"合成B3</h3><p>人体可将色氨酸转化为烟酸，60mg色氨酸≈1mg烟酸当量。蛋白质充足的饮食可部分弥补B3不足，但单一依赖玉米的人群（色氨酸含量低）风险最高。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">男性</div><div class="value" style="color:var(--b3)">16 mg NE</div></div><div class="data-item"><div class="label">女性</div><div class="value" style="color:var(--b3)">14 mg NE</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b3)">18 mg NE</div></div><div class="data-item"><div class="label">UL</div><div class="value" style="color:#e74c3c">35 mg</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b3)"><img src="./B族维生素 · 全景手册_files/pexels-photo-616354(1).jpeg" alt="鸡胸肉"><span>鸡胸肉</span></div>
+      <div class="food-card" style="color:var(--b3)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279.jpeg" alt="金枪鱼"><span>金枪鱼</span></div>
+      <div class="food-card" style="color:var(--b3)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1295572(1).jpeg" alt="花生"><span>花生</span></div>
+      <div class="food-card" style="color:var(--b3)"><img src="./B族维生素 · 全景手册_files/mushrooms-brown-mushrooms-cook-eat.jpg" alt="蘑菇"><span>蘑菇</span></div>
+      <div class="food-card" style="color:var(--b3)"><img src="./B族维生素 · 全景手册_files/pexels-photo-2280545(1).jpeg" alt="全麦"><span>全麦</span></div>
+    </div>
+    <div class="case-box reveal visible" style="border-left-color:var(--b3)"><img class="case-img" src="./B族维生素 · 全景手册_files/pexels-photo-2252584.jpeg" alt="玉米饼"><div class="case-year">1900s</div><h4>📖 墨西哥的古老智慧 vs 美国南方大流行</h4><p>20世纪初美国南方数十万人因玉米单一饮食患糙皮病，而墨西哥人吃玉米却不得病——秘密在于他们用石灰水浸泡玉米（Nixtamalization），恰好释放了被结合态锁住的烟酸。约瑟夫·戈德伯格通过孤儿院饮食干预实验证明这是营养缺乏而非传染病，最终推动了烟酸强化面粉政策。</p></div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1105166/pexels-photo-1105166.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: 89.9598px;"></div>
+
+<!-- ═════════════════ B5 泛酸 ═════════════════ -->
+<section class="vitamin-section" id="b5">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(80,120,80,.85),rgba(50,80,50,.9))"></div>
+    <div class="content"><div class="badge">04 · Pantothenic Acid</div><h2>B5</h2><div class="cn-name">泛酸</div><div class="quote">"护肤品成分表里的'泛醇'，就是它。"</div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b5)">生理功能</div><h3>辅酶A——代谢的"万能接头"</h3><p>泛酸是辅酶A（CoA）与酰基载体蛋白的核心组成。CoA参与TCA循环、脂肪酸合成与β-氧化、胆固醇合成等几乎所有中枢代谢通路。"泛"意为"广泛"——确实无处不在。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏与过量</div><h3>极难缺乏，极难过量</h3><p>广泛存在于食物中，自然状态下几乎不发生缺乏。实验性缺乏出现疲劳、手脚烧灼感。未设定UL，安全性极高。</p></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b5)">与生活的关联</div><h3>泛醇——从维生素到美容成分</h3><p>护肤品"泛醇"（Panthenol/维生素原B5）是泛酸衍生物，涂抹后转化为泛酸，促进上皮细胞再生。B族跨界美容业的经典案例。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-3785147.jpeg" alt="护肤品"></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--b5)">拓展</div><h3>运动与B5</h3><p>高强度运动消耗大量CoA参与脂肪酸氧化供能。职业运动员可关注B5协同补充以支持能量代谢效率。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">成人 AI</div><div class="value" style="color:var(--b5)">5 mg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b5)">6 mg</div></div><div class="data-item"><div class="label">UL</div><div class="value">—</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b5)"><img src="./B族维生素 · 全景手册_files/pexels-photo-616354(1).jpeg" alt="鸡肉"><span>鸡肉</span></div>
+      <div class="food-card" style="color:var(--b5)"><img src="./B族维生素 · 全景手册_files/potatoes-vegetables-erdfrucht-bio-144248.jpeg" alt="土豆"><span>土豆</span></div>
+      <div class="food-card" style="color:var(--b5)"><img src="./B族维生素 · 全景手册_files/pexels-photo-557659.jpeg" alt="牛油果"><span>牛油果</span></div>
+      <div class="food-card" style="color:var(--b5)"><img src="./B族维生素 · 全景手册_files/pexels-photo-543730.jpeg" alt="燕麦"><span>燕麦</span></div>
+      <div class="food-card" style="color:var(--b5)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1327838.jpeg" alt="葵花籽"><span>葵花籽</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1028599/pexels-photo-1028599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -2.99196px;"></div>
+
+<!-- ═════════════════ B6 吡哆醇 ═════════════════ -->
+<section class="vitamin-section" id="b6">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(180,80,55,.85),rgba(130,50,30,.9))"></div>
+    <div class="content"><div class="badge">05 · Pyridoxine</div><h2>B6</h2><div class="cn-name">吡哆醇</div><div class="quote">"服用避孕药的女性，B6是被消耗的隐形成本。"</div>
+      <div class="hero-food-strip"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279(2).jpeg" alt="三文鱼"><img src="./B族维生素 · 全景手册_files/pexels-photo-1093038.jpeg" alt="香蕉"><img src="./B族维生素 · 全景手册_files/pexels-photo-616354.jpeg" alt="鸡肉"></div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b6)">生理功能</div><h3>100+酶反应的"氨基酸指挥官"</h3><p>B6以PLP形式参与超过100种酶反应，涉及氨基酸转氨、脱羧和消旋。是血红蛋白合成辅因子，参与5-HT、多巴胺、GABA合成，直接影响情绪调节与认知。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-3683074.jpeg" alt="神经"></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>从贫血到抑郁</h3><p><strong>微球性贫血</strong>、<strong>周围神经病变</strong>、<strong>抑郁与认知障碍</strong>。服用异烟肼治疗结核者若不补B6极易出现药源性缺乏。</p></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:#e74c3c">过量风险 ⚠</div><h3>B族中少数有上限的成员</h3><p>长期&gt;500mg/d可致感觉神经病变。UL为100mg/d。市售高剂量B6补充剂需谨慎。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--b6)">与生活的关联</div><h3>避孕药与B6的博弈</h3><p>口服避孕药使血浆PLP下降20%~30%。建议长期使用者关注B6补充。B6（10~25mg/d）还被多个产科指南推荐为缓解孕吐的一线非药物干预。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">成人</div><div class="value" style="color:var(--b6)">1.3-1.7 mg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b6)">1.9 mg</div></div><div class="data-item"><div class="label">UL</div><div class="value" style="color:#e74c3c">100 mg</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b6)"><img src="./B族维生素 · 全景手册_files/pexels-photo-616354(1).jpeg" alt="鸡胸肉"><span>鸡胸肉</span></div>
+      <div class="food-card" style="color:var(--b6)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279.jpeg" alt="三文鱼"><span>三文鱼</span></div>
+      <div class="food-card" style="color:var(--b6)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1093038(1).jpeg" alt="香蕉"><span>香蕉</span></div>
+      <div class="food-card" style="color:var(--b6)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169.jpeg" alt="鹰嘴豆"><span>鹰嘴豆</span></div>
+      <div class="food-card" style="color:var(--b6)"><img src="./B族维生素 · 全景手册_files/potatoes-vegetables-erdfrucht-bio-144248.jpeg" alt="土豆"><span>土豆</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1656666/pexels-photo-1656666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -48.5304px;"></div>
+
+<!-- ═════════════════ B7 生物素 ═════════════════ -->
+<section class="vitamin-section" id="b7">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/6941010/pexels-photo-6941010.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(170,118,40,.85),rgba(120,80,20,.9))"></div>
+    <div class="content"><div class="badge">06 · Biotin</div><h2>B7</h2><div class="cn-name">生物素</div><div class="quote">"生鸡蛋清，是它的死敌。"</div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b7)">生理功能</div><h3>四种羧化酶的"钥匙"</h3><p>生物素是四种人体羧化酶的必需辅因子——糖异生、脂肪酸合成和氨基酸代谢均依赖它。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>脱发、皮疹、脆甲</h3><p>典型表现为脱发、眼周口周鳞状红疹、脆甲、抑郁。长期抗癫痫药使用者风险显著升高。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-6941010(1).jpeg" alt="坚果"></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b7)">与生活的关联</div><h3>"美容维生素"的真相</h3><p>只有在确实缺乏时补充才有效果。健康人额外补充高剂量，并无可靠证据证明能改善发质或指甲。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#e74c3c">FDA安全警告</div><h3>高剂量干扰实验室检测</h3><p>2017年FDA警告：高剂量生物素可严重干扰肌钙蛋白、甲状腺功能等关键指标检测。检测前停服至少72小时。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">成人 AI</div><div class="value" style="color:var(--b7)">30 μg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b7)">30 μg</div></div><div class="data-item"><div class="label">UL</div><div class="value">—</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b7)"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026.jpeg" alt="鸡蛋"><span>鸡蛋（熟）</span></div>
+      <div class="food-card" style="color:var(--b7)"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941010(2).jpeg" alt="坚果"><span>坚果</span></div>
+      <div class="food-card" style="color:var(--b7)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3338681.jpeg" alt="猪肝"><span>猪肝</span></div>
+      <div class="food-card" style="color:var(--b7)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169.jpeg" alt="大豆"><span>大豆</span></div>
+      <div class="food-card" style="color:var(--b7)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-89247.jpeg" alt="红薯"><span>红薯</span></div>
+    </div>
+    <div class="tip-box reveal visible"><h4>⚠️ 生鸡蛋清是B7的天敌</h4><p>生蛋清中的<strong>抗生物素蛋白（Avidin）</strong>与生物素结合力极强，阻止肠道吸收。加热可使Avidin变性。长期大量食用生蛋清（部分健身者习惯）可致B7缺乏。<strong>煮熟的鸡蛋则是优质B7来源。</strong></p></div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -74.183px;"></div>
+
+<!-- ═════════════════ B9 叶酸 ═════════════════ -->
+<section class="vitamin-section" id="b9">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/2325843/pexels-photo-2325843.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(40,100,50,.85),rgba(20,60,28,.9))"></div>
+    <div class="content"><div class="badge">07 · Folate</div><h2>B9</h2><div class="cn-name">叶酸</div><div class="quote">"每一个新生命的第一道营养防线。"</div>
+      <div class="hero-food-strip"><img src="./B族维生素 · 全景手册_files/pexels-photo-2325843(2).jpeg" alt="菠菜"><img src="./B族维生素 · 全景手册_files/pexels-photo-557659(1).jpeg" alt="牛油果"><img src="./B族维生素 · 全景手册_files/pexels-photo-1435706(1).jpeg" alt="柑橘"></div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card full reveal-scale visible" style="background:linear-gradient(135deg,#e8f5e9,#fff);border-color:#c8e6c9">
+        <div style="display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap">
+          <div style="font-family:var(--serif);font-size:5rem;font-weight:900;color:var(--b9);line-height:1">46%</div>
+          <div><div class="card-tag" style="color:var(--b9)">关键数据</div><p style="font-size:1rem;color:#333"><strong>全球叶酸强化政策实施后，神经管缺陷发生率下降约46%</strong>——每年全球避免约22万例出生缺陷。</p></div>
+        </div>
+      </div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b9)">生理功能</div><h3>DNA复制的必需品</h3><p>叶酸以THF形式作为一碳单位转移载体，参与DNA复制原料生产。对快速分裂细胞至关重要。与B12、B6协同调控同型半胱氨酸代谢。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>巨幼红细胞性贫血 + 神经管缺陷</h3><p>孕早期缺乏使胎儿神经管缺陷（脊柱裂、无脑儿）风险升高3~8倍。神经管闭合发生在受孕后21~28天，此时许多女性尚不知已怀孕。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-3845456.jpeg" alt="孕期"></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">成人</div><div class="value" style="color:var(--b9)">400 μg DFE</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b9)">600 μg DFE</div></div><div class="data-item"><div class="label">UL</div><div class="value" style="color:#e74c3c">1000 μg</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b9)"><img src="./B族维生素 · 全景手册_files/pexels-photo-2325843.jpeg" alt="深绿叶菜"><span>深绿叶菜</span></div>
+      <div class="food-card" style="color:var(--b9)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3338681.jpeg" alt="肝脏"><span>动物肝脏</span></div>
+      <div class="food-card" style="color:var(--b9)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169.jpeg" alt="豆类"><span>豆类</span></div>
+      <div class="food-card" style="color:var(--b9)"><img src="./B族维生素 · 全景手册_files/pexels-photo-1435706(2).jpeg" alt="柑橘"><span>柑橘类</span></div>
+      <div class="food-card" style="color:var(--b9)"><img src="./B族维生素 · 全景手册_files/pexels-photo-557659.jpeg" alt="牛油果"><span>牛油果</span></div>
+    </div>
+    <div class="case-box reveal visible" style="border-left-color:var(--b9)"><img class="case-img" src="./B族维生素 · 全景手册_files/pexels-photo-2280545(2).jpeg" alt="面粉"><div class="case-year">1998</div><h4>📖 全球叶酸强化政策——公共卫生里程碑</h4><p>1998年美国率先在面粉中强制添加叶酸，此后80余国跟进。美国神经管缺陷下降约26%，全球范围下降约46%，每年避免约22万例出生缺陷。</p></div>
+    <div class="tip-box reveal visible"><h4>⚠️ 备孕应提前3个月补充叶酸</h4><p>因为神经管闭合发生在受孕后3~4周，此时往往不知已怀孕。天然叶酸极不稳定——蔬菜放置3天损失70%，烹饪又损失50%~90%。孕期补充合成叶酸更可靠。</p></div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -83.917px;"></div>
+
+<!-- ═════════════════ B12 钴胺素 ═════════════════ -->
+<section class="vitamin-section" id="b12">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(100,20,30,.88),rgba(60,10,18,.92))"></div>
+    <div class="content"><div class="badge">08 · Cobalamin</div><h2>B12</h2><div class="cn-name">钴胺素</div><div class="quote">"纯素食的代价，往往要在五到十年后才浮现。"</div>
+      <div class="hero-food-strip"><img src="./B族维生素 · 全景手册_files/pexels-photo-3535383(1).jpeg" alt="牛肉"><img src="./B族维生素 · 全景手册_files/pexels-photo-248412(2).jpeg" alt="牛奶"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026(2).jpeg" alt="鸡蛋"></div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b12)">生理功能</div><h3>唯一含金属钴的维生素</h3><p>B12分子中心有一个钴原子——在所有维生素中独一无二。参与DNA合成、红细胞成熟、髓鞘维护，并与叶酸协同调控同型半胱氨酸代谢。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>从贫血到神经退化</h3><p><strong>巨幼红细胞性贫血</strong>、<strong>亚急性联合变性</strong>（脊髓脱髓鞘）——手脚麻木、行走困难、认知下降。因肝脏储存量大，症状出现可能需5~10年。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-3683074.jpeg" alt="神经系统"></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--b12)">与生活的关联</div><h3>素食者的必修课</h3><p>B12几乎仅存在于动物食品。海苔、螺旋藻中的"类B12"为非活性类似物。纯素食者必须通过强化食品或补充剂获取——不是建议，是必需。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--b12)">拓展</div><h3>老年人的隐性危机</h3><p>约10%~30%的老年人因胃酸减少和内因子不足，无法有效吸收食物中的B12。建议50岁以上通过补充剂获取。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">成人</div><div class="value" style="color:var(--b12)">2.4 μg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--b12)">2.6 μg</div></div><div class="data-item"><div class="label">UL</div><div class="value">—</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--b12)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3338681.jpeg" alt="肝脏"><span>动物肝脏</span></div>
+      <div class="food-card" style="color:var(--b12)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3535383(2).jpeg" alt="牛肉"><span>牛肉</span></div>
+      <div class="food-card" style="color:var(--b12)"><img src="./B族维生素 · 全景手册_files/pexels-photo-248412.jpeg" alt="牛奶"><span>牛奶</span></div>
+      <div class="food-card" style="color:var(--b12)"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026.jpeg" alt="鸡蛋"><span>鸡蛋</span></div>
+      <div class="food-card" style="color:var(--b12)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279.jpeg" alt="三文鱼"><span>三文鱼</span></div>
+    </div>
+    <div class="case-box reveal visible" style="border-left-color:var(--b12)"><img class="case-img" src="./B族维生素 · 全景手册_files/pexels-photo-593451.jpeg" alt="药物"><h4>📖 二甲双胍——糖尿病患者的B12陷阱</h4><p>二甲双胍可使B12吸收降低约30%。美国糖尿病协会已建议长期服用者定期检测B12。类似地，抗癫痫药消耗生物素，异烟肼拮抗B6——长期用药者的B族监测应纳入常规管理。</p></div>
+  </div>
+</section>
+
+<div class="section-banner" style="background-image: url(&quot;https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&quot;); background-position-y: -77.0973px;"></div>
+
+<!-- ═════════════════ 胆碱 ═════════════════ -->
+<section class="vitamin-section" id="choline">
+  <div class="section-hero"><div class="bg-img" style="background-image:url(&#39;https://images.pexels.com/photos/6941026/pexels-photo-6941026.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&#39;)"></div><div class="bg-overlay" style="background:linear-gradient(135deg,rgba(160,120,30,.85),rgba(100,70,10,.9))"></div>
+    <div class="content"><div class="badge">09 · Choline</div><h2>胆碱</h2><div class="cn-name">Choline</div><div class="quote">"1998年才被正式认定为必需营养素——B族最年轻的成员。"</div>
+      <div class="hero-food-strip"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026(2).jpeg" alt="蛋黄"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169(1).jpeg" alt="大豆"><img src="./B族维生素 · 全景手册_files/pexels-photo-3535383(1).jpeg" alt="牛肉"></div></div></div>
+  <div class="section-body">
+    <div class="info-grid">
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--ch)">生理功能</div><h3>细胞膜与大脑的"建筑材料"</h3><p>胆碱是磷脂酰胆碱（卵磷脂）前体，构成每一个细胞膜。是神经递质乙酰胆碱直接前体，对记忆、肌肉控制、情绪调节至关重要。还参与同型半胱氨酸代谢和脂肪转运。</p></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:#c0392b">缺乏后果</div><h3>脂肪肝与认知衰退</h3><p><strong>非酒精性脂肪肝</strong>（VLDL合成受阻）、<strong>肌肉损伤</strong>、<strong>认知功能下降</strong>。孕期不足还可能影响胎儿脑发育。</p></div>
+      <div class="info-card reveal-left visible"><div class="card-tag" style="color:var(--ch)">与生活的关联</div><h3>蛋黄：被冤枉的营养宝库</h3><p>一个蛋黄含约150mg胆碱。过去蛋黄因胆固醇被限制，最新膳食指南已移除膳食胆固醇上限。每天1~2个全蛋是获取胆碱最简便方式——别再只吃蛋白丢蛋黄了。</p><img class="card-img" src="./B族维生素 · 全景手册_files/pexels-photo-6941026(3).jpeg" alt="蛋黄"></div>
+      <div class="info-card reveal-right visible"><div class="card-tag" style="color:var(--ch)">拓展</div><h3>绝经后女性需求骤增</h3><p>PEMT酶活性受雌激素上调，绝经后合成能力下降，膳食需求增加。因此胆碱被归为"必需营养素"。</p></div>
+    </div>
+    <div class="data-strip reveal visible"><div class="data-item"><div class="label">男性 AI</div><div class="value" style="color:var(--ch)">550 mg</div></div><div class="data-item"><div class="label">女性 AI</div><div class="value" style="color:var(--ch)">425 mg</div></div><div class="data-item"><div class="label">孕期</div><div class="value" style="color:var(--ch)">450 mg</div></div><div class="data-item"><div class="label">UL</div><div class="value" style="color:#e74c3c">3500 mg</div></div></div>
+    <h3 class="food-section-title reveal visible">🍽️ 食物来源</h3>
+    <div class="food-gallery reveal visible">
+      <div class="food-card" style="color:var(--ch)"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026.jpeg" alt="蛋黄"><span>蛋黄</span></div>
+      <div class="food-card" style="color:var(--ch)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3338681.jpeg" alt="牛肝"><span>牛肝</span></div>
+      <div class="food-card" style="color:var(--ch)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3535383(2).jpeg" alt="牛肉"><span>牛肉</span></div>
+      <div class="food-card" style="color:var(--ch)"><img src="file:///C:/Users/86147/Desktop/B%E6%97%8F%E7%BB%B4%E7%94%9F%E7%B4%A0%20%C2%B7%20%E5%85%A8%E6%99%AF%E6%89%8B%E5%86%8C_files/pexels-photo-1537169.jpeg" alt="大豆"><span>大豆</span></div>
+      <div class="food-card" style="color:var(--ch)"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279.jpeg" alt="三文鱼"><span>三文鱼</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════ SUMMARY TABLE ═════════════════ -->
+<section class="summary-section">
+  <h2 class="reveal visible">膳食参考摄入量速查表</h2>
+  <p class="sub reveal visible">数据来源：中国居民膳食营养素参考摄入量（DRIs 2023） · 美国国家科学院（IOM）</p>
+  <div class="summary-table reveal visible">
+    <table>
+      <thead><tr><th>维生素</th><th>成人男性</th><th>成人女性</th><th>孕期</th><th>UL</th></tr></thead>
+      <tbody>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-4110257(3).jpeg" alt="">B1 硫胺素</td><td>1.4 mg</td><td>1.2 mg</td><td>1.4 mg</td><td>—</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-248412(3).jpeg" alt="">B2 核黄素</td><td>1.4 mg</td><td>1.2 mg</td><td>1.4 mg</td><td>—</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-547263(3).jpeg" alt="">B3 烟酸</td><td>16 mg NE</td><td>14 mg NE</td><td>18 mg NE</td><td>35 mg</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-557659(2).jpeg" alt="">B5 泛酸</td><td>5 mg</td><td>5 mg</td><td>6 mg</td><td>—</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279(3).jpeg" alt="">B6 吡哆醇</td><td>1.7 mg</td><td>1.3 mg</td><td>1.9 mg</td><td>100 mg</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941010(3).jpeg" alt="">B7 生物素</td><td>30 μg</td><td>30 μg</td><td>30 μg</td><td>—</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-2325843(3).jpeg" alt="">B9 叶酸</td><td>400 μg</td><td>400 μg</td><td>600 μg</td><td>1000 μg</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-3535383(3).jpeg" alt="">B12 钴胺素</td><td>2.4 μg</td><td>2.4 μg</td><td>2.6 μg</td><td>—</td></tr>
+        <tr><td class="vname"><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026(4).jpeg" alt="">胆碱</td><td>550 mg</td><td>425 mg</td><td>450 mg</td><td>3500 mg</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═════════════════ MEAL GUIDE ═════════════════ -->
+<section class="meal-section">
+  <h2 class="reveal visible">一天的餐桌</h2>
+  <p class="sub reveal visible">如何在三餐里高效覆盖九种B族维生素</p>
+  <div class="meal-grid">
+    <div class="meal-card reveal stagger-1 visible">
+      <div class="meal-img" style="background-image:url(&#39;https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&#39;)"><span class="meal-time">🌅 07:30 早餐</span></div>
+      <div class="meal-body"><h3>全麦面包 · 鸡蛋 · 牛奶 · 香蕉</h3>
+        <div class="meal-foods"><img src="./B族维生素 · 全景手册_files/pexels-photo-2280545(3).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-6941026(1).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-248412(1).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-1093038(2).jpeg" alt=""></div>
+        <p>简单四种食物即可覆盖六种B族维生素。</p><div class="vtags">B1 · B2 · B6 · B7 · B12 · 胆碱</div></div>
+    </div>
+    <div class="meal-card reveal stagger-2 visible">
+      <div class="meal-img" style="background-image:url(&#39;https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&#39;)"><span class="meal-time">☀️ 12:30 午餐</span></div>
+      <div class="meal-body"><h3>糙米饭 · 鸡胸肉 · 菠菜 · 番茄</h3>
+        <div class="meal-foods"><img src="./B族维生素 · 全景手册_files/pexels-photo-4110257(1).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-616354(2).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-2325843(1).jpeg" alt=""></div>
+        <p>糙米替代白米是最直接的B1升级。</p><div class="vtags">B1 · B3 · B5 · B6 · B9</div></div>
+    </div>
+    <div class="meal-card reveal stagger-3 visible">
+      <div class="meal-img" style="background-image:url(&#39;https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&#39;)"><span class="meal-time">🌙 19:00 晚餐</span></div>
+      <div class="meal-body"><h3>三文鱼 · 西兰花 · 糙米 · 牛油果</h3>
+        <div class="meal-foods"><img src="./B族维生素 · 全景手册_files/pexels-photo-3296279(1).jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-1300972.jpeg" alt=""><img src="./B族维生素 · 全景手册_files/pexels-photo-557659(3).jpeg" alt=""></div>
+        <p>三文鱼同时提供B3、B6、B12三种维生素。</p><div class="vtags">B3 · B5 · B6 · B9 · B12</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════ FACTS ═════════════════ -->
+<section class="facts-section">
+  <h2 class="reveal visible">六个被普遍忽略的事实</h2>
+  <div class="facts-grid">
+    <div class="fact-card reveal stagger-1 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-1438672.jpeg" alt="煲汤"><div class="fact-num">01</div><h4>煮汤弃汤 ≈ 丢掉一半B族</h4><p>B族全部水溶性，烹饪时大量溶入汤水。建议蒸、快炒等少水烹饪法，或连汤一起食用。</p></div>
+    <div class="fact-card reveal stagger-2 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-4110257(4).jpeg" alt="糙米白米"><div class="fact-num">02</div><h4>精白米面 = 去除70%~80% B族</h4><p>B族集中在胚芽和糊粉层，精加工全部去除。全谷物替代精制主食是最简单有效的改善。</p></div>
+    <div class="fact-card reveal stagger-3 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-593451(1).jpeg" alt="药物"><div class="fact-num">03</div><h4>多种常见药物消耗B族</h4><p>二甲双胍降低B12；异烟肼拮抗B6；抗癫痫药消耗生物素；避孕药降低B6和叶酸。长期用药者需监测。</p></div>
+    <div class="fact-card reveal stagger-4 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-1640777.jpeg" alt="素食"><div class="fact-num">04</div><h4>纯素食者必须主动补充B12</h4><p>海苔、螺旋藻中多为非活性类似物。纯素食不补B12不是"可能缺乏"，而是"必然缺乏"。</p></div>
+    <div class="fact-card reveal stagger-5 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-6941010(1).jpeg" alt="检测"><div class="fact-num">05</div><h4>高剂量生物素干扰临床检测</h4><p>FDA已警告：可导致肌钙蛋白、甲状腺功能检测失准。抽血前停服至少72小时。</p></div>
+    <div class="fact-card reveal stagger-1 visible"><img class="fact-img" src="./B族维生素 · 全景手册_files/pexels-photo-3683074.jpeg" alt="心血管"><div class="fact-num">06</div><h4>B6、B12、叶酸是"铁三角"</h4><p>三者协同调控同型半胱氨酸代谢。缺一即升高心血管风险，单独补充不如协同补充。</p></div>
+  </div>
+</section>
+
+<!-- ═════════════════ FOOTER ═════════════════ -->
+<footer class="footer">
+  <div class="f-title reveal visible">" 均衡的餐桌，永远胜过一柜子的补充剂。"</div>
+  <p class="reveal visible">B族维生素 · 全景手册<br>数据来源：中国居民膳食营养素参考摄入量（DRIs 2023） · 美国国家科学院（IOM）<br>内容仅供科普参考，不构成医学建议 · 2026</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => obs.observe(el));
+
+// Parallax on section banners
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.section-banner').forEach(b => {
+    const rect = b.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      b.style.backgroundPositionY = (rect.top * 0.3) + 'px';
+    }
+  });
+});
+</script>
+
+
+</body></html>
